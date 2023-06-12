@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics And Maths Tutor Fix</title>
+    <style>
+        body {
+            padding: 10%;
+        }
+    </style>
+    <script>
+        function getContent(element) {
+            if(event.key === 'Enter') {
+                let URL = element.value;
+                URL = URL.replace("https://www.physicsandmathstutor.com/pdf-pages/?pdf=", "")
+                URL = decodeURIComponent(URL);
+                alert(URL)
+                window.open(URL, "_blank")
+                
+                element.value = ""
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Enter the https://www.physicsandmathstutor.com/pdf-pages/ URL to open the PDF directly.</p>
+    <input type="text" id="url" onkeydown="getContent(this)">
+</body>
+</html>
